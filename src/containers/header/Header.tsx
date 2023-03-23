@@ -13,13 +13,13 @@ const Header = () => {
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
-    }, 6500)
+    }, 1300)
   }, [])  
 
   return (
     <div className="gpt3__header section__padding items-start" id="home">
       <div className="gpt3__header-content">
-        <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={10} />
+        <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={1} />
         {/* <h1 className="gradient__text">Restoring Balance through Atmospheric Waste Management</h1> */}
         <p>
           Leveraging the natural power of limestone to remove 1 billion tons of C02 by 2035 using the
@@ -28,7 +28,7 @@ const Header = () => {
 
         <div className="gpt3__header-content__people">
           <p>Follow Our Journey</p>
-          <BsArrowDownCircle className="hover:scale-[1.2]" color="#fff" size={44} id="arrow" />
+          <BsArrowDownCircle className="down-arrow" color="#fff" size={44} id="arrow" />
         </div>
       </div>
 

@@ -3,6 +3,15 @@
   overflow-y: hidden;
 }
 
+.down-arrow {
+
+  &:hover {
+    animation: bounce;
+    animation-duration: 5s;
+    animation-delay: 0.5s;
+  }
+}
+
 @keyframes rotate-earth {
   from {
     transform: rotate(0deg);

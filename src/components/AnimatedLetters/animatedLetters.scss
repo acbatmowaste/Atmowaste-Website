@@ -3,7 +3,7 @@
   opacity: 0;
   animation: bounceIn;
   animation-duration: 1s;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
   min-width: 10px;
 }
@@ -21,12 +21,12 @@
   animation-fill-mode: both;
 
   &:hover {
-    animation: rubberBand 1s;
+    animation: rubberBand 0.8s;
   }
 }
 
-@for $i from 1 through 63 {
+@for $i from 1 through 54 {
   .text-animate._#{$i} {
-    animation-delay: #{$i / 10}s;
+    animation-delay: #{$i / 55}s;
   }
 }
