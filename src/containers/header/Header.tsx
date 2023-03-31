@@ -6,16 +6,13 @@ import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Earth } from "../../components";
-import { Stars } from "@react-three/drei";
-
 
 const Header = () => {
   const [letterClass, setLetterClass] = useState<string>('text-animate');
-  const nameArray = ['R', 'e', 's', 't', 'o', 'r', 'i', 'n', 'g', ' ', 'B', 'a', 'l', 'a', 'n', 'c', 'e', ' ', 
-                     'T', 'h', 'r', 'o', 'u', 'g', 'h', ' ', 'A', 't', 'm', 'o', 's', 'p', 'h', 'e', 'r', 'i', 'c',
+  const nameArray = ['A', 't', 'm', 'o', 's', 'p', 'h', 'e', 'r', 'i', 'c',
                      ' ', 'W', 'a', 's', 't', 'e', ' ', 'M', 'a', 'n', 'a', 'g', 'e', 'm', 'e', 'n', 't'];
 
-  useEffect(() => {
+  useEffect(() => {        <Header />
     setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 1300)
@@ -23,17 +20,7 @@ const Header = () => {
 
   return (
     <>
-      {/* <Canvas className="absolute">
-        <Stars
-          radius={300}
-          depth={60}
-          count={20000}
-          factor={7}
-          saturation={0}
-          fade={true}
-        />
-      </Canvas> */}
-      <div className="gpt3__header section__padding items-start" id="home">
+      <div className="gpt3__header section__padding items-center" id="home">
         <div className="gpt3__header-content">
           <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={1} />
           {/* <h1 className="gradient__text">Restoring Balance through Atmospheric Waste Management</h1> */}
@@ -47,15 +34,21 @@ const Header = () => {
             <BsArrowDownCircle className="down-arrow" color="#fff" size={44} id="arrow" />
           </div>
         </div>
-
-        <div className="gpt3__header-image">
-          {/* <img className="earth" src={earth} /> */}
-          <Canvas className="space">
-            <Suspense fallback={null}>
-              <Earth />
-            </Suspense>
-          </Canvas>
-        </div>
+        <Canvas>
+          {/* <ShootingStar /> */}
+          <Suspense>
+            <Earth />
+          </Suspense>
+        </Canvas>
+        {/* <div className="gpt3__header-image">
+          <img className="earth" src={earth} />
+        </div> */}
+      </div>
+      <div className="flex text-gray-500 justify-start ml-[100px] gap-10 relative -top-[95px]">
+        <p>75 milllion</p>
+        <p>100+</p>
+        <p>Atlassian</p>
+        <p>Placeholder</p>
       </div>
     </>
   );
