@@ -110,7 +110,22 @@
   border: 2px solid var(--color-footer);
 }
 
+@media screen and (max-width: 2250px) {
+  #heading {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  #heading {
+    font-size: 4rem;
+  }
+}
+
 @media screen and (max-width: 1050px) {
+  #heading {
+    font-size: 3rem;
+  }
   .gpt3__header {
     flex-direction: column;
   }

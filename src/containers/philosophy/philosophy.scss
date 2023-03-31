@@ -1,20 +1,26 @@
 .custom-shape-divider-top-1680224802 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
 }
 
 .custom-shape-divider-top-1680224802 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 158px;
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 158px;
 }
 
 .custom-shape-divider-top-1680224802 .shape-fill {
-    fill: rgba(4, 12, 24, 1);
+  fill: rgba(4, 12, 24, 1);
+  //   fill: #fff;
+}
+
+.philosophy {
+  animation: backInRight;
+  animation-delay: 3s;
 }
