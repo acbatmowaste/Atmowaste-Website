@@ -5,13 +5,16 @@ interface AnimatedLetterProps {
   letterClass: string;
   strArray: string[];
   idx: number;
+  id: string;
 }
 
-const AnimatedLetters = ({ letterClass, strArray, idx }: AnimatedLetterProps) => {
+// bg-gradient-to-r from-sky-500 to-[#6936F5]
+
+const AnimatedLetters = ({ letterClass, strArray, idx, id }: AnimatedLetterProps) => {
   return (
     <span>
       {strArray.map((char, i) => (
-        <h1 id="heading" key={char + i} className={`${letterClass} _${i + idx} bg-gradient-to-r from-sky-500 to-[#6936F5]`}>
+        <h1 id={id} key={char + i} className={`${letterClass} _${i + idx}`}>
           {char}
         </h1>
       ))}

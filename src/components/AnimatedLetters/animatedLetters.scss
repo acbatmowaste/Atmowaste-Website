@@ -8,8 +8,9 @@
   min-width: 10px;
 }
 
-#heading {
-  // background: var(--gradient-text);
+#two:hover {
+  animation: rubberBand 0.8s;
+  background: #fff;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -22,6 +23,10 @@
 
   &:hover {
     animation: rubberBand 0.8s;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 

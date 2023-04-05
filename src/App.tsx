@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
 
-import { Footer, Header, Philosophy } from './containers';
-import { Navbar, About } from './components';
+import { Footer, Header, Philosophy, Contact } from './containers';
+import { Navbar, About, Subscribe } from './components';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { ShootingStar } from "./components";
@@ -31,6 +31,8 @@ const App = () => {
         </Canvas>
         <Header />
         <About />
+        <Contact />
+        <Subscribe />
         <Footer />
       </div>
     </div>

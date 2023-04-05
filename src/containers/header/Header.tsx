@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import "./header.scss";
 // import earth from "../../assets/earth.png";
+import trees from "../../assets/Trees.png";
 import { BsArrowDownCircle } from "react-icons/bs";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Earth } from "../../components";
 import { motion } from "framer-motion";
+import Media from 'react-media';
 
 const Header = () => {
   const [letterClass, setLetterClass] = useState<string>('text-animate');
@@ -25,35 +27,88 @@ const Header = () => {
 
   return (
     <section>
-      <div className="gpt3__header section__padding items-center" id="home">
+      <div className="gpt3__header section__padding items-center mt-[25%] sm:mt-[25%] md:mt-[25%] lg:mt-auto xl:mt-auto 2xl:mt-auto" id="home">
         <div className="gpt3__header-content">
-          <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={1} />
+          <AnimatedLetters id="one" letterClass={letterClass} strArray={nameArray} idx={1} />
           <br />
-          <AnimatedLetters letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} />
+          <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} />
           <p>
             Leveraging the natural power of limestone to remove 1 billion tons of C02 by 2035 using the
             world’s most cost-effective Direct Air Capture technology.
           </p>
+
+          <div className="gpt3__header-content__input">
+            <input type="email" placeholder="Your Email Address" />
+            <button type="button" className="min-w-fit">Get Started</button>
+          </div>
 
           <div className="gpt3__header-content__people">
             <p>Follow Our Journey</p>
             <BsArrowDownCircle className="down-arrow" color="#fff" size={44} id="arrow" />
           </div>
         </div>
-        <motion.div
+        <Media queries={{
+          small: "(max-width: 599px)",
+          medium: "(min-width: 600px) and (max-width: 1199px)",
+          large: "(min-width: 1200px)"
+        }}>
+          {matches => (
+            <Fragment>
+              {matches.small && 
+                <motion.div
+                  id="canvas"
+                  initial={{ opacity: 0, y: -300 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 3, duration: 1.5 }}>
+                  <Canvas id="earthRender" style={{ width: '400px', height: '400px'}} className="">
+                    <Suspense fallback={null}>
+                      <Earth />
+                    </Suspense>
+                  </Canvas>
+                </motion.div>}
+              {matches.medium && 
+                <motion.div
+                  id="canvas"
+                  initial={{ opacity: 0, y: -300 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 3, duration: 1.5 }}>
+                  <Canvas id="earthRender" style={{ width: '500px', height: '500px'}} className="">
+                    <Suspense fallback={null}>
+                      <Earth />
+                    </Suspense>
+                  </Canvas>
+                </motion.div>}
+              {matches.large && 
+                <motion.div
+                  id="canvas"
+                  initial={{ opacity: 0, y: -300 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 3, duration: 1.5 }}>
+                  <Canvas id="earthRender" style={{ width: '600px', height: '600px'}} className="">
+                    <Suspense fallback={null}>
+                      <Earth />
+                    </Suspense>
+                  </Canvas>
+                </motion.div>}
+            </Fragment>
+          )}
+        </Media>
+        {/* <motion.div
+          id="canvas"
           initial={{ opacity: 0, y: -300 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3, duration: 1.5 }}>
-          <Canvas style={{ width: '450px', height: '450px' }}>
+          <Canvas id="earthRender" style={{ width: '100%', height: '100%'}} className="">
             <Suspense fallback={null}>
               <Earth />
             </Suspense>
           </Canvas>
-        </motion.div>
+        </motion.div> */}
         {/* <div className="gpt3__header-image">
           <img className="earth" src={earth} />
         </div> */}
       </div>
+      {/* <img className="w-full h-auto absolute top-[60vh]" src={trees}></img> */}
       <div className="flex text-gray-500 justify-start ml-[100px] gap-10 relative -top-[200px]">
         <motion.p
           initial={{ opacity: 0, y: -70 }}

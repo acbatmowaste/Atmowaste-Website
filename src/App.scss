@@ -1,3 +1,6 @@
+@import "animate.css";
+// @import "~loaders.css/src/animations/pacman.scss";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -47,6 +50,10 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
+.gradient__bar {
+  background: var(--gradient-bar);
+}
+
 .section__padding {
   padding: 4rem 6rem;
 }
@@ -58,6 +65,24 @@ a {
 scale-up-center {
   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  animation: fadeOut 1s 1s;
+  animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes scale-up-center {
