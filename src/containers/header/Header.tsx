@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./header.scss";
 // import earth from "../../assets/earth.png";
 import { BsArrowDownCircle } from "react-icons/bs";
@@ -6,7 +6,7 @@ import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { Earth } from "../../components";
-import Philosophy from "../philosophy/Philosophy";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [letterClass, setLetterClass] = useState<string>('text-animate');
@@ -19,11 +19,12 @@ const Header = () => {
   useEffect(() => {        <Header />
     setTimeout(() => {
       setLetterClass('text-animate-hover');
+      setLetterClassTwo('text-animate-hover');
     }, 1300)
   }, [])  
 
   return (
-    <>
+    <section>
       <div className="gpt3__header section__padding items-center" id="home">
         <div className="gpt3__header-content">
           <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={1} />
@@ -39,25 +40,39 @@ const Header = () => {
             <BsArrowDownCircle className="down-arrow" color="#fff" size={44} id="arrow" />
           </div>
         </div>
-        <Canvas>
-          <Suspense>
-            <Earth />
-          </Suspense>
-        </Canvas>
+        <motion.div
+          initial={{ opacity: 0, y: -300 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3, duration: 1.5 }}>
+          <Canvas style={{ width: '450px', height: '450px' }}>
+            <Suspense fallback={null}>
+              <Earth />
+            </Suspense>
+          </Canvas>
+        </motion.div>
         {/* <div className="gpt3__header-image">
           <img className="earth" src={earth} />
         </div> */}
       </div>
-      <div className="flex text-gray-500 justify-start ml-[100px] gap-10 relative -top-[95px]">
-        <p>75 milllion</p>
-        <p>100+</p>
-        <p>Atlassian</p>
-        <p>Placeholder</p>
+      <div className="flex text-gray-500 justify-start ml-[100px] gap-10 relative -top-[200px]">
+        <motion.p
+          initial={{ opacity: 0, y: -70 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.5 }}>Heirloom</motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: -70 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}>X-Prize</motion.p>
+        <motion.p
+        initial={{ opacity: 0, y: -70 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}>San Diego State University</motion.p>
+        <motion.p
+        initial={{ opacity: 0, y: -70 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}>UC San Diego</motion.p>
       </div>
-      <div className="h-[50vh] w-[70%] rounded-xl m-auto bg-gradient-to-r from-sky-500 to-[#6936F5] relative">
-        <Philosophy />
-      </div>
-    </>
+    </section>
   );
 }
 

@@ -5,14 +5,9 @@
   scroll-behavior: smooth;
 }
 
-body {
-  /* background: var(--color-bg); */
-  /* overflow: hidden; */
-}
-
 #stars {
   position: absolute;
-  height: 80vh !important;
+  height: 100vh !important;
   width: 100%;
 }
 
@@ -39,6 +34,10 @@ a {
 
   /* global 92%+ browsers support */
   background: radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+}
+
+.footer__bg {
+  background: var(--color-footer);
 }
 
 .gradient__text {

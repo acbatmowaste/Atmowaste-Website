@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
 
-import { Header, Philosophy } from './containers';
-import { Navbar } from './components';
+import { Footer, Header, Philosophy } from './containers';
+import { Navbar, About } from './components';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { ShootingStar } from "./components";
@@ -24,12 +24,14 @@ const App = () => {
             saturation={0}
             fade={true}
           />
-          <ShootingStar />
+          {/* <ShootingStar />
           <EffectComposer>
             <Bloom mipmapBlur luminanceThreshold={1} />
-          </EffectComposer>
+          </EffectComposer> */}
         </Canvas>
         <Header />
+        <About />
+        <Footer />
       </div>
     </div>
   );
