@@ -29,9 +29,9 @@ const Footer = () => {
 
           <div className="app__footer-links_logo flex flex-col items-center">
             {/* <img src={} alt="footer_logo" /> */}
-            <p className="p__opensans">&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
+            <p className="p__opensans z-50">&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
             {/* <img src={earth} className="earth__img" style={{ marginTop: 15, width: 120 }} /> */}
-            <Canvas>
+            <Canvas className="-top-24 z-0 h-fit">
               <ambientLight intensity={0.5} />
               <directionalLight position={[-2, 5, 2]} intensity={1} />
               <Suspense fallback={null}>

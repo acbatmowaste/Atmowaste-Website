@@ -27,20 +27,38 @@ export const About = () => {
             transition={{ delay: .7, duration: 0.7 }}>
               Restoring balance to our environment
           </motion.h1>
-          <motion.h3 className="gradient__text"
+          <motion.button className="gradient__bar rounded p-2 self-center"
             initial={{ opacity: 0, x: 300 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.7 }}>
               Read our white paper
-          </motion.h3>
-          <div>
-            <div>
-              
-            </div>
-          </div>
+          </motion.button>
         </div>
-        <div>
-
+        <div className="flex w-full my-24 justify-evenly">
+          <motion.div className="w-[30%]"
+            initial={{ opacity: 0, y: -200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}>
+            <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
+            <h1 className="text-xl pb-2">Our process</h1>
+            <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eius dolores labore aperiam voluptas? Quae architecto, unde, reiciendis est velit modi iste deserunt iusto quo repellendus facilis accusamus asperiores officia.</p>
+          </motion.div>
+          <motion.div className="w-[30%]"
+            initial={{ opacity: 0, y: -200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}>
+            <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
+            <h1 className="text-xl pb-2">Accelerating the natural process</h1>
+            <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eius dolores labore aperiam voluptas? Quae architecto, unde, reiciendis est velit modi iste deserunt iusto quo repellendus facilis accusamus asperiores officia.</p>
+          </motion.div>
+          <motion.div className="w-[30%]"
+            initial={{ opacity: 0, y: -200 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}>
+            <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
+            <h1 className="text-xl pb-2">The process</h1>
+            <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eius dolores labore aperiam voluptas? Quae architecto, unde, reiciendis est velit modi iste deserunt iusto quo repellendus facilis accusamus asperiores officia.</p>
+          </motion.div>
         </div>
       </motion.div>
     </section>

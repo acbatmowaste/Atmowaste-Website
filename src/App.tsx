@@ -24,7 +24,9 @@ const App = () => {
             saturation={0}
             fade={true}
           />
-          {/* <ShootingStar />
+          {/* <Suspense>
+            <ShootingStar />
+          </Suspense>
           <EffectComposer>
             <Bloom mipmapBlur luminanceThreshold={1} />
           </EffectComposer> */}

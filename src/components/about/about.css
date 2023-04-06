@@ -24,6 +24,11 @@
     color: #81AFDD;
 }
 
+#paragraph {
+    color: var(--color-text);
+    margin-bottom: 25px
+}
+
 /* gradient__text {
     background: var(--gradient-text);
     background-clip: text;

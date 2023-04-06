@@ -13,6 +13,7 @@ import Media from 'react-media';
 const Header = () => {
   const [letterClass, setLetterClass] = useState<string>('text-animate');
   const [letterClassTwo, setLetterClassTwo] = useState<string>('text-animate');
+  const [contentLoaded, setContentLoaded] = useState<boolean>(true);
 
   const nameArray = ['A', 't', 'm', 'o', 's', 'p', 'h', 'e', 'r', 'i', 'c',
                      ' ', 'W', 'a', 's', 't', 'e'];
@@ -22,6 +23,7 @@ const Header = () => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
       setLetterClassTwo('text-animate-hover');
+      setContentLoaded(true);
     }, 1300)
   }, [])  
 
@@ -46,53 +48,54 @@ const Header = () => {
             <p>Follow Our Journey</p>
             <BsArrowDownCircle className="down-arrow" color="#fff" size={44} id="arrow" />
           </div>
-        </div>
-        <Media queries={{
-          small: "(max-width: 599px)",
-          medium: "(min-width: 600px) and (max-width: 1199px)",
-          large: "(min-width: 1200px)"
-        }}>
-          {matches => (
-            <Fragment>
-              {matches.small && 
-                <motion.div
-                  id="canvas"
-                  initial={{ opacity: 0, y: -300 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 3, duration: 1.5 }}>
-                  <Canvas id="earthRender" style={{ width: '400px', height: '400px'}} className="">
-                    <Suspense fallback={null}>
-                      <Earth />
-                    </Suspense>
-                  </Canvas>
-                </motion.div>}
-              {matches.medium && 
-                <motion.div
-                  id="canvas"
-                  initial={{ opacity: 0, y: -300 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 3, duration: 1.5 }}>
-                  <Canvas id="earthRender" style={{ width: '500px', height: '500px'}} className="">
-                    <Suspense fallback={null}>
-                      <Earth />
-                    </Suspense>
-                  </Canvas>
-                </motion.div>}
-              {matches.large && 
-                <motion.div
-                  id="canvas"
-                  initial={{ opacity: 0, y: -300 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 3, duration: 1.5 }}>
-                  <Canvas id="earthRender" style={{ width: '600px', height: '600px'}} className="">
-                    <Suspense fallback={null}>
-                      <Earth />
-                    </Suspense>
-                  </Canvas>
-                </motion.div>}
-            </Fragment>
-          )}
-        </Media>
+        </div> 
+        { contentLoaded && (
+          <Media queries={{
+            small: "(max-width: 599px)",
+            medium: "(min-width: 600px) and (max-width: 1199px)",
+            large: "(min-width: 1200px)"
+          }}>
+            {matches => (
+              <Fragment>
+                {matches.small && 
+                  <motion.div
+                    id="canvas"
+                    initial={{ opacity: 0, y: -300 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 3, duration: 1.5 }}>
+                    <Canvas id="earthRender" style={{ width: '400px', height: '400px'}} className="">
+                      <Suspense fallback={null}>
+                        <Earth />
+                      </Suspense>
+                    </Canvas>
+                  </motion.div>}
+                {matches.medium && 
+                  <motion.div
+                    id="canvas"
+                    initial={{ opacity: 0, y: -300 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 3, duration: 1.5 }}>
+                    <Canvas id="earthRender" style={{ width: '500px', height: '500px'}} className="">
+                      <Suspense fallback={null}>
+                        <Earth />
+                      </Suspense>
+                    </Canvas>
+                  </motion.div>}
+                {matches.large && 
+                  <motion.div
+                    id="canvas"
+                    initial={{ opacity: 0, y: -300 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 3, duration: 1.5 }}>
+                    <Canvas id="earthRender" style={{ width: '600px', height: '600px'}} className="">
+                      <Suspense fallback={null}>
+                        <Earth />
+                      </Suspense>
+                    </Canvas>
+                  </motion.div>}
+              </Fragment>
+            )}
+          </Media>)}
         {/* <motion.div
           id="canvas"
           initial={{ opacity: 0, y: -300 }}
