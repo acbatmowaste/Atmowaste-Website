@@ -5,6 +5,7 @@ import earth from '../../assets/earth.png';
 import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
 import { DistortedSphere } from '../../components/DistortedSphere/DistortedSphere';
 import { Canvas } from '@react-three/fiber';
+import { BsHandIndex } from 'react-icons/bs';
 
 const Footer = () => {
   return (
@@ -17,7 +18,13 @@ const Footer = () => {
           className="gradient__text text-4xl">The time to invest in the future of our planet is now</motion.h1>
       </div>
       <button className="gradient__bar rounded px-4 mt-12 h-[35px]">Remove CO2</button>
-
+      <motion.div
+        initial={{ x: 100, y: 100 }}
+        whileInView={{ x: 0, y: 0, scale: 0.8 }}
+        transition={{ delay: 0.3, duration: 1.5, ease: "easeOut" }}
+        className="flex justify-center ml-20">
+        <BsHandIndex size={45} color='white'/>
+      </motion.div>
       <div className="app__footer section__padding" id="login">
         <div className="app__footer-links">
           <div className="app__footer-links_contact">
@@ -31,13 +38,13 @@ const Footer = () => {
             {/* <img src={} alt="footer_logo" /> */}
             <p className="p__opensans z-50">&quot;The best way to find yourself is to lose yourself in the service of others.&quot;</p>
             {/* <img src={earth} className="earth__img" style={{ marginTop: 15, width: 120 }} /> */}
-            <Canvas className="-top-24 z-0 h-fit">
+            {/* <Canvas className="-top-24 z-0 h-fit">
               <ambientLight intensity={0.5} />
               <directionalLight position={[-2, 5, 2]} intensity={1} />
               <Suspense fallback={null}>
                 <DistortedSphere />
               </Suspense>
-            </Canvas>
+            </Canvas> */}
             <div className="app__footer-links_icons flex">
               <FiFacebook />
               <FiTwitter />
@@ -47,7 +54,7 @@ const Footer = () => {
 
           <div className="app__footer-links_work">
             <h1 className="app__footer-headtext">Working Hours</h1>
-            <p className="p__opensans">Monday-Friday:</p>
+            <a href="" className="p__opensans">Monday-Friday:</a>
             <p className="p__opensans">08:00 am - 12:00 am</p>
             <p className="p__opensans">Saturday-Sunday:</p>
             <p className="p__opensans">07:00 am - 11:00 pm</p>

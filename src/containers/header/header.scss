@@ -11,6 +11,10 @@
   }
 }
 
+#nowrap {
+  white-space: nowrap;
+}
+
 #one {
   color: white;
 }
@@ -185,6 +189,12 @@
     font-size: 4rem;
   }
 }
+
+// @media screen and (max-width: 1205px) {
+//   .gpt3__header {
+//     flex-direction: column;
+//   }
+// }
 
 @media screen and (max-width: 1050px) {
   // #canvas {

@@ -59,6 +59,14 @@ a {
   background: var(--gradient-bar);
 }
 
+.text {
+  color: var(--color-text);
+}
+
+.subtext {
+  color: var(--color-subtext);
+}
+
 .section__padding {
   padding: 4rem 6rem;
 }

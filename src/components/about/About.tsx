@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './about.css';
+import { Philosophy } from '../../containers';
 
 export const About = () => {
   return (
     <section className="about text-white h-[100vh]">
         {/* // bg-gradient-to-r from-sky-500 to-[#6936F5]  */}
       <motion.div id="whatAtmo" className="h-auto w-[82%] rounded-xl m-auto"
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 80, scale: 0.6 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 0.1, duration: 0.7 }}>
         <div className="flex items-center h-[14vh] m-auto">
             <div className="text-lg basis-2/6 pl-[50px]">
@@ -61,6 +62,7 @@ export const About = () => {
           </motion.div>
         </div>
       </motion.div>
+      <Philosophy />
     </section>
   );
 }

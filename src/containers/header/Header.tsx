@@ -31,9 +31,14 @@ const Header = () => {
     <section>
       <div className="gpt3__header section__padding items-center mt-[25%] sm:mt-[25%] md:mt-[25%] lg:mt-auto xl:mt-auto 2xl:mt-auto" id="home">
         <div className="gpt3__header-content">
-          <AnimatedLetters id="one" letterClass={letterClass} strArray={nameArray} idx={1} />
+          {/* <AnimatedLetters id="one" letterClass={letterClass} strArray={nameArray} idx={1} />
           <br />
-          <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} />
+          <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} /> */}
+          <div id="nowrap">
+            <AnimatedLetters id="one" letterClass={letterClass} strArray={nameArray} idx={1} />
+            <br />
+            <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} />
+          </div>
           <p>
             Leveraging the natural power of limestone to remove 1 billion tons of C02 by 2035 using the
             world’s most cost-effective Direct Air Capture technology.

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 
 import { Footer, Header, Philosophy, Contact } from './containers';
-import { Navbar, About, Subscribe } from './components';
+import { Navbar, About, Subscribe, IconContainer  } from './components';
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import { ShootingStar } from "./components";
@@ -33,8 +33,9 @@ const App = () => {
         </Canvas>
         <Header />
         <About />
-        <Contact />
+        {/* <Contact /> */}
         <Subscribe />
+        {/* <IconContainer /> */}
         <Footer />
       </div>
     </div>
