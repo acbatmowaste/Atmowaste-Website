@@ -37,16 +37,16 @@ const Header = () => {
           <div id="nowrap">
             <AnimatedLetters id="one" letterClass={letterClass} strArray={nameArray} idx={1} />
             <br />
-            <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} />
+            {/* <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} /> */}
+            <h1 id="two">Management</h1>
           </div>
           <p>
-            Leveraging the natural power of limestone to remove 1 billion tons of C02 by 2035 using the
-            world’s most cost-effective Direct Air Capture technology.
+            We are building a global mesh network of Carbon Capture facilities, using the most effective and efficient solutions engineered for any climate anywhere.
           </p>
 
           <div className="gpt3__header-content__input">
             <input type="email" placeholder="Your Email Address" />
-            <button type="button" className="min-w-fit">Get Started</button>
+            <button type="button" className="min-w-fit gradient__bar">Get Started</button>
           </div>
 
           <div className="gpt3__header-content__people">

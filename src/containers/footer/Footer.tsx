@@ -17,7 +17,7 @@ const Footer = () => {
           whileInView={{}}
           className="gradient__text text-4xl">The time to invest in the future of our planet is now</motion.h1>
       </div>
-      <button className="gradient__bar rounded px-4 mt-12 h-[35px]">Remove CO2</button>
+      <button className="remove rounded px-4 mt-12 h-[35px]">Remove CO2</button>
       <motion.div
         initial={{ x: 100, y: 100 }}
         whileInView={{ x: 0, y: 0, scale: 0.8 }}
@@ -29,9 +29,8 @@ const Footer = () => {
         <div className="app__footer-links">
           <div className="app__footer-links_contact">
             <h1 className="app__footer-headtext">Contact Us</h1>
-            <p className="p__opensans">9 W 53rd St, New York, NY 10019, USA</p>
-            <p className="p__opensans">+1 212-344-1230</p>
-            <p className="p__opensans">+1 212-555-1230</p>
+            <p className="p__opensans">421 Ocean Blvd, Coronado, CA 92118, USA</p>
+            <a className="p__opensans">jeremy@atmowaste.com</a>
           </div>
 
           <div className="app__footer-links_logo flex flex-col items-center">

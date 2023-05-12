@@ -1,5 +1,7 @@
 .co2 {
-  background-color: #6936f5 !important;
+  /* background-color: #6936f5 !important; */
+  background-image: var(--gradient-button) !important;
+  box-shadow: 3px 1px 20px #eee;
 }
 
 .gpt3__navbar {
@@ -65,7 +67,6 @@
 .gpt3__navbar-menu_container button {
   padding: 0.5rem 1rem; /** no set in stone width height **/
   color: #fff;
-  background: #ff4820;
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 18px;

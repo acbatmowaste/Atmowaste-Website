@@ -36,7 +36,7 @@ const Philosophy = () => {
                 initial={{ opacity: 0}}
                 whileInView={{ opacity: 1}}
                 transition={{}}>
-                  Protect our environment
+                  Our Vision
               </motion.h1>
             </div>
             <motion.p 

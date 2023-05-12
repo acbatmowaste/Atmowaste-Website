@@ -32,8 +32,8 @@ const Contact = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row">
-      <div className="ml-[55px] container contact-page w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%]">
+    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pl-8 pt-8">
+      <div className="ml-[55px] container contact-page w-[100%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
         <div className="text-zone">
           <span className="tags top-tags gradient__text ml-8">&lt;body&gt;</span>
           <h1>
@@ -45,9 +45,7 @@ const Contact = () => {
             />
           </h1>
           <p className="subtext">
-            I am interested in freelance opportunities - especially on ambitious
-            or large projects. However, if you have any other requests or
-            questions, don't hesitate to contact me using below form either.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, omnis similique impedit recusandae vero rerum placeat odio enim, quidem ut inventore adipisci dignissimos fuga harum esse beatae voluptas incidunt possimus.
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
@@ -92,7 +90,7 @@ const Contact = () => {
           </span>
         </div>
       </div>
-      <div className="w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] flex">
+      {/* <div className="w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] flex"> */}
         {/* <div className="info-map">
           Slobodan Gajić,
           <br />
@@ -103,15 +101,15 @@ const Contact = () => {
           <br />
           <span>freelancerslobodan@gmail.com</span>
         </div> */}
-        <div className="map-wrap w-[82%] m-auto mt-8 md:mt-auto lg:mt-auto xl:mt-auto 2xl:mt-auto">
+        {/* <div className="map-wrap w-[82%] m-auto mt-8 md:mt-auto lg:mt-auto xl:mt-auto 2xl:mt-auto">
           <MapContainer center={[32.7157, -117.1611]} zoom={13}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={[32.7157, 117.1611]}>
               <Popup>AtmoWaste Headquearters, come see what we are doing!</Popup>
             </Marker>
           </MapContainer>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
       {/* <Loader type="pacman" active/> */}
     </div>
   )
