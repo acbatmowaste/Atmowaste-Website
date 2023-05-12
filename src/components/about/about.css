@@ -24,9 +24,13 @@
     color: #81AFDD;
 }
 
+#button {
+    background: var(--gradient-button);
+}
+
 #paragraph {
     color: var(--color-text);
-    margin-bottom: 25px
+    margin-bottom: 25px;
 }
 
 /* gradient__text {

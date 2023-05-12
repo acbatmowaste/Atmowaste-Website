@@ -32,7 +32,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pl-8 pt-8">
+    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pl-8 pt-8 mt-96">
       <div className="ml-[55px] container contact-page w-[100%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
         <div className="text-zone">
           <span className="tags top-tags gradient__text ml-8">&lt;body&gt;</span>

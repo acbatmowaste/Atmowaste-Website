@@ -43,7 +43,7 @@ const Philosophy = () => {
               initial={{ opacity: 0, x: 300}}
               whileInView={{ opacity: 1, x: 0}}
               transition={{ delay: 0.1, duration: 0.5  }}>
-                Rocks are some of the planet's most vital carbon sinks. Over geological timescales, CO2 from the atmosphere binds to minerals and permanently turns to rock – a process known as carbon mineralization.
+                At the heart of our mission lies a bold vision: "Forming a worldwide network of carbon sequestration facilities, armed with the best adaptive solutions for any climate condition." This isn't a one-size-fits-all approach; rather, we leverage top-tier, climate-adaptive solutions to ensure optimal efficiency regardless of the geographical location or local climate of our facilities.
             </motion.p>
           </div>
           <div className="pb-6 flex gap-24">

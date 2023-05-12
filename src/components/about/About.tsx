@@ -16,19 +16,18 @@ export const About = () => {
                 <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
                 <motion.h1>Who is AtmoWaste</motion.h1>
             </div> 
-            <motion.h4 className="h mx-auto px-[20px] basis-4/6">We so opinion friends me message as delight. Whole front do of plate heard oh ought.
-              His defective nor convinced residence own. Connection has put impossible own apartments boisterous. At jointure ladyship an insisted so
-              humanity he. Friendly bachelor entrance to on by.
+            <motion.h4 className="h mx-auto px-[20px] pt-4 basis-4/6">We are a collective of experts from different fields dedicated to researching, designing, and implementing innovative technologies that can minimize the negative impact of atmospheric waste on our environment. Our ultimate goal is to promote sustainability and enhance the quality of life for all living beings by reducing pollution, mitigating climate change, and preserving natural resources.
+
             </motion.h4>
         </div>
         <div className="flex justify-between mt-[70px] px-[50px] min-h-[50px]">
-          <motion.h1 className="gradient__text min-h-max text-4xl"
+          <motion.h1 className="gradient__text min-h-max text-3xl"
             initial={{ opacity: 0, x: -300 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: .7, duration: 0.7 }}>
-              Restoring balance to our environment
+              Restoring balance through atmospheric waste services
           </motion.h1>
-          <motion.button className="gradient__bar rounded p-2 self-center"
+          <motion.button id="button" className="rounded p-2 self-center"
             initial={{ opacity: 0, x: 300 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.7 }}>
@@ -42,7 +41,7 @@ export const About = () => {
             transition={{ delay: 0.1, duration: 0.6 }}>
             <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
             <h1 className="text-xl pb-2">Our Approach</h1>
-            <p id="paragraph">Our approach to carbon capture, storage, and upcycling involves multiple strategies. While we're currently utilizing the world's most cost-effective Direct Air Capture technology to remove 1 billion tons of CO2 by 2035, we're also exploring other innovative technologies. Our goal is to identify the most effective solutions for capturing, storing, and upcycling carbon dioxide and its byproducts, and to continually refine our approach as new technologies emerge</p>
+            <p id="paragraph">Our multipronged approach to carbon capture, storage, and upcycling involves various innovative technologies. While we're utilizing some of the world's most cost-effective Direct Air Capture technologies to remove 1 billion tons of CO2 by 2035, we're also exploring other solutions. We aim to identify the most effective and synergistic combinations of technologies for capturing, storing, and upcycling air pollution, carbon dioxide, and its byproducts. We will continue to refine our approach as new technologies emerge."</p>
           </motion.div>
           <motion.div className="w-[30%]"
             initial={{ opacity: 0, y: -200 }}
@@ -50,7 +49,7 @@ export const About = () => {
             transition={{ delay: 0.2, duration: 0.6 }}>
             <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
             <h1 className="text-xl pb-2">Accelerating the natural process</h1>
-            <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eius dolores labore aperiam voluptas? Quae architecto, unde, reiciendis est velit modi iste deserunt iusto quo repellendus facilis accusamus asperiores officia.</p>
+            <p id="paragraph">Our goal is to accelerate carbon capture using efficient, man-made technologies through carbon capture and storage (CCS) systems, which involve capturing carbon dioxide emissions from industrial processes. From here we can either upcycle the CO2 into usable goods or store it in underground geological formations.</p>
           </motion.div>
           <motion.div className="w-[30%]"
             initial={{ opacity: 0, y: -200 }}
@@ -58,7 +57,7 @@ export const About = () => {
             transition={{ delay: 0.3, duration: 0.6 }}>
             <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
             <h1 className="text-xl pb-2">The process</h1>
-            <p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eius dolores labore aperiam voluptas? Quae architecto, unde, reiciendis est velit modi iste deserunt iusto quo repellendus facilis accusamus asperiores officia.</p>
+            <p id="paragraph">We utilize cutting-edge artificial intelligence (AI) and machine learning (ML) models to analyze complex data, predict pollution trends, and anticipate population shifts. By leveraging this advanced technology, we can also forecast changes in climate patterns, allowing us to identify optimal locations for atmospheric waste management facilities, significantly reducing the time and resources required for site selection.</p>
           </motion.div>
         </div>
       </motion.div>
