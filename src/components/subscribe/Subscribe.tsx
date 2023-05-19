@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 
 export const Subscribe = () => (
-  <motion.div className="app__newsletter rounded m-auto flex justify-start items-center h-[12vh]"
+  <motion.div className="app__newsletter rounded m-auto flex justify-start items-center h-[12vh] mt-24"
     initial={{ opacity: 0, scale: 0.1 }}
     whileInView={{ opacity: 1, scale: 1}}
     transition={{ ease: 'easeInOut', duration: 0.5}}>

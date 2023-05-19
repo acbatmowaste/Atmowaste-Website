@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import './footer.scss';
 import { motion } from 'framer-motion';
 import earth from '../../assets/earth.png';
+import Trees from '../../assets/Trees.png';
 import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
 import { DistortedSphere } from '../../components/DistortedSphere/DistortedSphere';
 import { Canvas } from '@react-three/fiber';
@@ -21,7 +22,7 @@ const Footer = () => {
       <button className="remove rounded px-4 mt-12 h-[35px]">Remove CO2</button>
       <motion.div
         initial={{ x: 100, y: 100 }}
-        whileInView={{ x: 0, y: 0, scale: 0.8 }}
+        whileInView={{ x: 0, y: -20, scale: 0.4 }}
         transition={{ delay: 0.3, duration: 1.5, ease: "easeOut" }}
         className="flex justify-center ml-20">
         <BsHandIndex size={45} color='white'/>
@@ -66,6 +67,7 @@ const Footer = () => {
           <p className="p__opensans">2020 Copyright &copy; AtmoWaste. All Rights reserved.</p>
         </div>
       </div>
+      {/* <img className="w-full foreground" src={Trees}></img> */}
     </section>
   );
 };

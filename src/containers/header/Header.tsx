@@ -121,7 +121,7 @@ const Header = () => {
         <motion.p
           initial={{ opacity: 0, y: -70 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.5 }}>Heirloom</motion.p>
+          transition={{ delay: 0.1, duration: 0.5 }}>Sustainability</motion.p>
         <motion.p
           initial={{ opacity: 0, y: -70 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,11 +129,11 @@ const Header = () => {
         <motion.p
         initial={{ opacity: 0, y: -70 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}>San Diego State University</motion.p>
+        transition={{ delay: 0.3, duration: 0.5 }}>AI Solutions</motion.p>
         <motion.p
         initial={{ opacity: 0, y: -70 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5 }}>UC San Diego</motion.p>
+        transition={{ delay: 0.4, duration: 0.5 }}>Strategic Partnerships</motion.p>
       </div>
     </section>
   );

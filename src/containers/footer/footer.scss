@@ -73,6 +73,14 @@
   color: var(--color-text);
 }
 
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 .remove {
   background-image: var(--gradient-button);
   box-shadow: 0 0 40px #eee;

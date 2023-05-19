@@ -6,7 +6,7 @@ import { GrChatOption } from 'react-icons/gr';
 
 export const About = () => {
   return (
-    <section className="about text-white h-[100vh]">
+    <section className="about text-white">
         {/* // bg-gradient-to-r from-sky-500 to-[#6936F5]  */}
       <motion.div id="whatAtmo" className="h-auto w-[82%] rounded-xl m-auto"
         initial={{ opacity: 0, y: 80, scale: 0.6 }}
@@ -62,7 +62,7 @@ export const About = () => {
           </motion.div>
         </div>
       </motion.div>
-      <Philosophy />
+      {/* <Philosophy /> */}
     </section>
   );
 }

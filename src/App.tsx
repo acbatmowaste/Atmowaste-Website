@@ -14,7 +14,7 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing';
 
 const App = () => {
   return (
-    <div className="App gradient__bg">
+    <div className="App gradient__bg overflow-hidden">
       <div className="">
         <Navbar />
         <Canvas id="stars" className="absolute">
@@ -29,6 +29,14 @@ const App = () => {
         </Canvas>
         <Header />
         <About />
+        <motion.div className="" style={{ height: '35vh' }}>
+          <Canvas>
+            <ambientLight intensity={0.2} />
+            <pointLight color="#f6f3ea" position={[2, 0, 5]} intensity={2.8} />
+            <Values modelPath="./src/assets/co2.glb" />
+          </Canvas>
+        </motion.div>
+        <Philosophy />
         <Contact />
         {/* <div className="mt-32 mb-96" style={{ height: '100vh' }}>
           <motion.h1 id="values" className="text-5xl gradient__text text-white text-center">Our Values</motion.h1>

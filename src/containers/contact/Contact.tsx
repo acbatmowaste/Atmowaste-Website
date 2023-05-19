@@ -32,8 +32,8 @@ const Contact = () => {
   }
 
   return (
-    <section className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pl-8 pt-8 relative">
-      <div className="ml-[55px] container contact-page w-[100%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
+    <section className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pt-8 relative">
+      <div className="mx-auto container contact-page w-[100%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
         <div className="text-zone">
           <h1 className="gradient__text text-4xl py-6">
             Lets start a conversation about your climate goals
