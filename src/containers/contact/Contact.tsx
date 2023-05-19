@@ -32,20 +32,14 @@ const Contact = () => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pl-8 pt-8 mt-96">
+    <section className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pl-8 pt-8 relative">
       <div className="ml-[55px] container contact-page w-[100%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
         <div className="text-zone">
-          <span className="tags top-tags gradient__text ml-8">&lt;body&gt;</span>
-          <h1>
-            <AnimatedLetters
-              id="contactUs"
-              letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'U', 's']}
-              idx={15}
-            />
+          <h1 className="gradient__text text-4xl py-6">
+            Lets start a conversation about your climate goals
           </h1>
           <p className="subtext">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, omnis similique impedit recusandae vero rerum placeat odio enim, quidem ut inventore adipisci dignissimos fuga harum esse beatae voluptas incidunt possimus.
+            For any press related questions, please email <a>jeremy@atmowaste.com</a>
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
@@ -83,11 +77,6 @@ const Contact = () => {
             </form>
           </div>
           {/* <IconSlider /> */}
-          <span className="tags bottom-tags gradient__text ml-8">
-            &lt;/body&gt;
-            <br />
-            <span className="bottom-tag-html gradient__text">&lt;/html&gt;</span>
-          </span>
         </div>
       </div>
       {/* <div className="w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] flex"> */}
@@ -111,7 +100,7 @@ const Contact = () => {
         </div> */}
       {/* </div> */}
       {/* <Loader type="pacman" active/> */}
-    </div>
+    </section>
   )
 }
 

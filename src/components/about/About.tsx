@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './about.css';
 import { Philosophy } from '../../containers';
+import { GrChatOption } from 'react-icons/gr';
 
 export const About = () => {
   return (
@@ -27,11 +28,11 @@ export const About = () => {
             transition={{ delay: .7, duration: 0.7 }}>
               Restoring balance through atmospheric waste services
           </motion.h1>
-          <motion.button id="button" className="rounded p-2 self-center"
+          <motion.button id="button" className="rounded p-2 self-center flex"
             initial={{ opacity: 0, x: 300 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.7 }}>
-              Read our white paper
+              Join our efforts
           </motion.button>
         </div>
         <div className="flex w-full my-24 justify-evenly">
@@ -41,7 +42,7 @@ export const About = () => {
             transition={{ delay: 0.1, duration: 0.6 }}>
             <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
             <h1 className="text-xl pb-2">Our Approach</h1>
-            <p id="paragraph">Our multipronged approach to carbon capture, storage, and upcycling involves various innovative technologies. While we're utilizing some of the world's most cost-effective Direct Air Capture technologies to remove 1 billion tons of CO2 by 2035, we're also exploring other solutions. We aim to identify the most effective and synergistic combinations of technologies for capturing, storing, and upcycling air pollution, carbon dioxide, and its byproducts. We will continue to refine our approach as new technologies emerge."</p>
+            <p id="paragraph">Our multipronged approach to carbon capture, storage, and upcycling pollution involves various innovative technologies. We aim to identify the most effective and synergistic combinations of technologies for capturing, storing, and upcycling air pollution, carbon dioxide, and its byproducts. We will continue to refine our approach as new technologies emerge.</p>
           </motion.div>
           <motion.div className="w-[30%]"
             initial={{ opacity: 0, y: -200 }}
@@ -49,15 +50,15 @@ export const About = () => {
             transition={{ delay: 0.2, duration: 0.6 }}>
             <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
             <h1 className="text-xl pb-2">Accelerating the natural process</h1>
-            <p id="paragraph">Our goal is to accelerate carbon capture using efficient, man-made technologies through carbon capture and storage (CCS) systems, which involve capturing carbon dioxide emissions from industrial processes. From here we can either upcycle the CO2 into usable goods or store it in underground geological formations.</p>
+            <p id="paragraph">Our goal is to accelerate carbon capture using efficient, man-made technologies through carbon capture and storage (CCS) systems, which involve capturing carbon dioxide emissions directly from the air or industrial processes. From here we can either upcycle the carbon dioxide into usable goods or store it underground in geological formations.</p>
           </motion.div>
           <motion.div className="w-[30%]"
             initial={{ opacity: 0, y: -200 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}>
             <div className="rounded-xl w-[45px] h-[4px] gradient__bar mb-2"></div>
-            <h1 className="text-xl pb-2">The process</h1>
-            <p id="paragraph">We utilize cutting-edge artificial intelligence (AI) and machine learning (ML) models to analyze complex data, predict pollution trends, and anticipate population shifts. By leveraging this advanced technology, we can also forecast changes in climate patterns, allowing us to identify optimal locations for atmospheric waste management facilities, significantly reducing the time and resources required for site selection.</p>
+            <h1 className="text-xl pb-2">Employing AI Solutions</h1>
+            <p id="paragraph">We utilize cutting-edge artificial intelligence (AI) and machine learning (ML) models to analyze complex data, predict pollution trends, and anticipate population shifts. By leveraging this technology we can forecast changes in climate patterns to identify optimal locations for atmospheric waste management facilities while reducing the time and resources required for site selection.</p>
           </motion.div>
         </div>
       </motion.div>

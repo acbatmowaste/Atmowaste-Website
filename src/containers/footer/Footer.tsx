@@ -6,10 +6,11 @@ import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
 import { DistortedSphere } from '../../components/DistortedSphere/DistortedSphere';
 import { Canvas } from '@react-three/fiber';
 import { BsHandIndex } from 'react-icons/bs';
+import Philosophy from '../philosophy/Philosophy';
 
 const Footer = () => {
   return (
-    <section className="footer__bg text-center mt-24 pt-24">
+    <section className="footer__bg text-center mt-24 pt-24 relative">
       <div>
         <motion.h1
           initial={{ }}
@@ -51,12 +52,13 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="app__footer-links_work">
-            <h1 className="app__footer-headtext">Working Hours</h1>
-            <a href="" className="p__opensans">Monday-Friday:</a>
-            <p className="p__opensans">08:00 am - 12:00 am</p>
-            <p className="p__opensans">Saturday-Sunday:</p>
-            <p className="p__opensans">07:00 am - 11:00 pm</p>
+          <div className="app__footer-links_work flex flex-col">
+            <h1 className="app__footer-headtext">AtmoWaste</h1>
+            <a href="" className="p__opensans"></a>
+            <a className="p__opensans">About</a>
+            <a className="p__opensans">Philosophy</a>
+            <a className="p__opensans">Our Values</a>
+            <a className="p__opensans">Contact Us</a>
           </div>
         </div>
 

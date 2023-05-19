@@ -13,7 +13,10 @@ const Menu = () => (
       <a href="#wgpt3">About AtmoWaste</a>
     </p>
     <p>
-      <a href="#possibility">X-Prize Competition</a>
+      <a href="#possibility">Philosophy</a>
+    </p>
+    <p>
+      <a href="#features">Contact Us</a>
     </p>
     <p>
       <a href="#features">Subscribe</a>

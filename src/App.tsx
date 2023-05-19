@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.scss';
 
+import { BrowserRouter } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { motion } from 'framer-motion';
 import { Footer, Header, Philosophy, Contact, Values } from './containers';
 import { Navbar, About, Subscribe, IconContainer  } from './components';
@@ -28,7 +30,7 @@ const App = () => {
         <Header />
         <About />
         <Contact />
-        <div className="mt-32 mb-96" style={{ height: '100vh' }}>
+        {/* <div className="mt-32 mb-96" style={{ height: '100vh' }}>
           <motion.h1 id="values" className="text-5xl gradient__text text-white text-center">Our Values</motion.h1>
           <motion.h2 id="" className="text-xl text text-center pt-4">Our approach to saving the environment is driven by a core set of values that center around marijuana</motion.h2>
           <div className="w-80 h-80 card2 relative rounded-xl top-32 left-64">
@@ -50,8 +52,8 @@ const App = () => {
           <motion.div className="w-80 h-80 card2 relative -top-1/2 left-32 rounded-xl border-2xl"></motion.div>  
           <motion.div className="w-80 h-80 card2 relative left-[60%] -top-[127%] rounded-xl border-2xl"></motion.div>  
 
-          {/* <div className="w-80 h-80 card2 relative rounded-xl border-2xl"></div>   */}
-        </div>
+          <div className="w-80 h-80 card2 relative rounded-xl border-2xl"></div> 
+        </div> */}
         <Subscribe />
         <Footer />
       </div>
