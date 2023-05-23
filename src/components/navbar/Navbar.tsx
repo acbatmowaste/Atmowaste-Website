@@ -10,16 +10,16 @@ const Menu = () => (
       <a href="#home">Home</a>
     </p>
     <p>
-      <a href="#wgpt3">About AtmoWaste</a>
+      <a href="#about">About AtmoWaste</a>
     </p>
     <p>
-      <a href="#possibility">Philosophy</a>
+      <a href="#philosophy">Philosophy</a>
     </p>
     <p>
-      <a href="#features">Contact Us</a>
+      <a href="#contact">Contact Us</a>
     </p>
     <p>
-      <a href="#features">Subscribe</a>
+      <a href="#subscribe">Subscribe</a>
     </p>
   </>
 );
@@ -39,10 +39,14 @@ const Navbar = () => {
         </div>
       </div>
       <div className="gpt3__navbar-sign">
-        <p>Donate</p>
-        <button className="co2" type="button">
-          Remove CO2
-        </button>
+        <a href="#subscribe">
+          <p>Donate</p>
+        </a>
+        <a href="#subscribe">
+          <button className="co2" type="button">
+            Remove CO2
+          </button>
+        </a>
       </div>
       <div className="gpt3__navbar-menu">
         {toggleMenu ? (
@@ -55,10 +59,20 @@ const Navbar = () => {
             <div className="gpt3__navbar-menu_container-links">
               <Menu />
               <div className="gpt3__navbar-menu_container-links-sign">
-                <p>Donate</p>
-                <button className="co2" type="button">
-                  Remove CO2
+                <a href="#about">
+                  <p>Donate</p>
+                </a>
+                <button
+                  type="button"
+                  className="co2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href='#subscribe';
+                  }}>
                 </button>
+                  {/* <button onClick="location.href='https://google.com';" className="co2" type="button">
+                    Remove CO2
+                  </button> */}
               </div>
             </div>
           </div>

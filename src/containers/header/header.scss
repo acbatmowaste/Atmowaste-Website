@@ -6,8 +6,8 @@
 .down-arrow {
   &:hover {
     animation: bounce;
-    animation-duration: 5s;
-    animation-delay: 0.5s;
+    animation-duration: 2s;
+    animation-delay: 0.2s;
   }
 }
 
@@ -137,7 +137,7 @@
 .gpt3__header-content__input input {
   flex: 2;
   width: 100%;
-  min-height: 50px;
+  min-height: 20px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
@@ -155,7 +155,7 @@
 .gpt3__header-content__input button {
   flex: 0.6;
   width: 100%;
-  min-height: 50px;
+  min-height: 20px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 20px;
@@ -217,7 +217,7 @@
   }
 
   .gpt3__header-content {
-    margin: 0 0 3rem;
+    margin: 0 0 0;
   }
   .earth {
     max-width: 70%;
@@ -229,6 +229,12 @@
   //   width: 475px;
   //   height: 475px;
   // }
+
+  #one,
+  #two {
+    font-size: 2.5rem;
+    width: fit-content;
+  }
 
   .gpt3__header-content h1 {
     font-size: 44px;
@@ -263,6 +269,11 @@
   //   width: 400px;
   //   height: 400px;
   // }
+  #one,
+  #two {
+    font-size: 2.3rem;
+    width: fit-content;
+  }
 
   .gpt3__header-content h1 {
     font-size: 36px;

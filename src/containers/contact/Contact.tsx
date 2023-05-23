@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters';
 import './contact.scss'
 
 const Contact = () => {
@@ -19,7 +17,7 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
+      .sendForm('service_7tmwh4g', 'template_alac4wk', form.current, 'b6TJmQrjbqUmxIZnF')
       .then(
         () => {
           alert('Message successfully sent!')
@@ -33,7 +31,7 @@ const Contact = () => {
 
   return (
     <section className="flex flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row pt-8 relative">
-      <div className="mx-auto container contact-page w-[100%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
+      <div className="mx-auto container contact-page w-[90%] md:w-[90%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
         <div className="text-zone">
           <h1 className="gradient__text text-4xl py-6">
             Lets start a conversation about your climate goals
@@ -79,27 +77,6 @@ const Contact = () => {
           {/* <IconSlider /> */}
         </div>
       </div>
-      {/* <div className="w-[100%] md:w-[50%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] flex"> */}
-        {/* <div className="info-map">
-          Slobodan Gajić,
-          <br />
-          Serbia,
-          <br />
-          Branka RadiČevića 19, 22000 <br />
-          Sremska Mitrovica <br />
-          <br />
-          <span>freelancerslobodan@gmail.com</span>
-        </div> */}
-        {/* <div className="map-wrap w-[82%] m-auto mt-8 md:mt-auto lg:mt-auto xl:mt-auto 2xl:mt-auto">
-          <MapContainer center={[32.7157, -117.1611]} zoom={13}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={[32.7157, 117.1611]}>
-              <Popup>AtmoWaste Headquearters, come see what we are doing!</Popup>
-            </Marker>
-          </MapContainer>
-        </div> */}
-      {/* </div> */}
-      {/* <Loader type="pacman" active/> */}
     </section>
   )
 }

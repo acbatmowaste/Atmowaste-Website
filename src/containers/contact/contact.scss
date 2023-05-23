@@ -98,12 +98,14 @@
   }
 
   .flat-button {
-    color: var(--color-subtext);
+    // color: var(--color-subtext);
     font-size: 11px;
     letter-spacing: 3px;
     text-decoration: none;
     padding: 8px 10px;
-    border: 1px solid var(--color-subtext);
+    // border: 1px solid var(--color-subtext);
+    background-image: var(--gradient-button) !important;
+    // box-shadow: 3px 1px 20px #eee;
     float: left;
     border-radius: 4px;
     background: 0 0;

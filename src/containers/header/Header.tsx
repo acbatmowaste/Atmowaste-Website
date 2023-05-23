@@ -44,14 +44,16 @@ const Header = () => {
             We are building a global mesh network of Carbon Capture facilities, using the most effective and efficient solutions engineered for any climate anywhere.
           </p>
 
-          <div className="gpt3__header-content__input">
+          <div className="gpt3__header-content__input w-[90%] mx-auto sm:w-[90%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
             <input type="email" placeholder="Your Email Address" />
             <button type="button" className="min-w-fit gradient__bar">Get Started</button>
           </div>
 
           <div className="gpt3__header-content__people">
             <p>Follow Our Journey</p>
-            <BsArrowDownCircle className="down-arrow" color="#fff" size={44} id="arrow" />
+            <a href="#about">
+              <BsArrowDownCircle className="down-arrow" color="#fff" size={44} id="arrow" />
+            </a>
           </div>
         </div> 
         { contentLoaded && (
@@ -77,6 +79,7 @@ const Header = () => {
                 {matches.medium && 
                   <motion.div
                     id="canvas"
+                    className="grow mt-12"
                     initial={{ opacity: 0, y: -300 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 3, duration: 1.5 }}>
@@ -117,7 +120,7 @@ const Header = () => {
         </div> */}
       </div>
       {/* <img className="w-full h-auto absolute top-[60vh]" src={trees}></img> */}
-      <div className="flex text-gray-500 justify-start ml-[100px] gap-10 relative -top-[200px]">
+      <div className="my-12 justify-center sm:justify-center md:justify-center text-xs sm:text-xs md:text-lg lg:text-lg gap-2 sm:gap-4 md:gap-4 lg:gap-8 flex text-gray-500 lg:justify-start md:ml-[80px] lg:ml-[100px] xl:ml-[100px] 2xl:ml-[100px] relative lg:-top-[200px] xl:-top-[200px] 2xl:-top-[200px]">
         <motion.p
           initial={{ opacity: 0, y: -70 }}
           animate={{ opacity: 1, y: 0 }}

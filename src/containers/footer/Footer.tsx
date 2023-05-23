@@ -11,15 +11,17 @@ import Philosophy from '../philosophy/Philosophy';
 
 const Footer = () => {
   return (
-    <section className="footer__bg text-center mt-24 pt-24 relative">
+    <section className="footer__bg text-center mt-12 md:mt-24 pt-24 relative">
       <div>
         <motion.h1
           initial={{ }}
           animate={{}}
           whileInView={{}}
-          className="gradient__text text-4xl">The time to invest in the future of our planet is now</motion.h1>
+          className="gradient__text  text-2xl md:text-4xl">The time to invest in the future of our planet is now</motion.h1>
       </div>
-      <button className="remove rounded px-4 mt-12 h-[35px]">Remove CO2</button>
+      <a href="#subscribe">
+        <button className="remove rounded px-4 mt-12 h-[35px]">Remove CO2</button>
+      </a>
       <motion.div
         initial={{ x: 100, y: 100 }}
         whileInView={{ x: 0, y: -20, scale: 0.4 }}
@@ -28,10 +30,10 @@ const Footer = () => {
         <BsHandIndex size={45} color='white'/>
       </motion.div>
       <div className="app__footer section__padding" id="login">
-        <div className="app__footer-links">
+        <div className="app__footer-links md:my-2">
           <div className="app__footer-links_contact">
             <h1 className="app__footer-headtext">Contact Us</h1>
-            <p className="p__opensans">421 Ocean Blvd, Coronado, CA 92118, USA</p>
+            {/* <p className="p__opensans">421 Ocean Blvd, Coronado, CA 92118, USA</p> */}
             <a className="p__opensans">jeremy@atmowaste.com</a>
           </div>
 
@@ -55,11 +57,10 @@ const Footer = () => {
 
           <div className="app__footer-links_work flex flex-col">
             <h1 className="app__footer-headtext">AtmoWaste</h1>
-            <a href="" className="p__opensans"></a>
-            <a className="p__opensans">About</a>
-            <a className="p__opensans">Philosophy</a>
-            <a className="p__opensans">Our Values</a>
-            <a className="p__opensans">Contact Us</a>
+            <a href="#about"className="p__opensans">About</a>
+            <a href="#philosophy"className="p__opensans">Philosophy</a>
+            <a href="#subscribe" className="p__opensans">Subscribe</a>
+            <a href="#contact" className="p__opensans">Contact Us</a>
           </div>
         </div>
 
