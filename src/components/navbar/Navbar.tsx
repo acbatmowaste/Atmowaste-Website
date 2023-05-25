@@ -6,21 +6,21 @@ import { useState } from 'react';
 
 const Menu = () => (
   <>
-    <p>
+    {/* <p>
       <a href="#home">Home</a>
-    </p>
+    </p> */}
     <p>
-      <a href="#about">About AtmoWaste</a>
+      <a href="#aboutSectionLink">About AtmoWaste</a>
     </p>
     <p>
       <a href="#philosophy">Philosophy</a>
     </p>
-    <p>
+    {/* <p>
       <a href="#contact">Contact Us</a>
-    </p>
-    <p>
+    </p> */}
+    {/* <p>
       <a href="#subscribe">Subscribe</a>
-    </p>
+    </p> */}
   </>
 );
 
@@ -34,7 +34,7 @@ const Navbar = () => {
           <GiEarthAmerica size={27} color="#fff" />
           <h1 id="logo">AtmoWaste</h1>
         </div>
-        <div className="gpt3__navbar-links_container">
+        <div className="gpt3__navbar-links_container relative z-50">
           <Menu />
         </div>
       </div>

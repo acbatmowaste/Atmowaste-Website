@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
 import "./header.scss";
-// import earth from "../../assets/earth.png";
 import trees from "../../assets/Trees.png";
 import { BsArrowDownCircle } from "react-icons/bs";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
@@ -9,11 +8,50 @@ import { Suspense } from "react";
 import { Earth } from "../../components";
 import { motion } from "framer-motion";
 import Media from 'react-media';
+import emailjs from '@emailjs/browser'
+import { useRef } from 'react'
 
 const Header = () => {
   const [letterClass, setLetterClass] = useState<string>('text-animate');
   const [letterClassTwo, setLetterClassTwo] = useState<string>('text-animate');
   const [contentLoaded, setContentLoaded] = useState<boolean>(true);
+
+  const form = useRef<HTMLFormElement>(null!);
+
+  const mouseClickEvents = ['mousedown', 'click', 'mouseup'];
+function simulateMouseClick(element: any){
+  mouseClickEvents.forEach(mouseEventType =>
+    element.dispatchEvent(
+      new MouseEvent(mouseEventType, {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+          buttons: 1
+      })
+    )
+  );
+}
+
+  const sendForm = (e: any) => {
+    const element = document.getElementById("submitemail");
+    simulateMouseClick(element);
+  }
+
+  const sendEmail = (e: any) => {
+    e.preventDefault()
+  
+    emailjs
+      .sendForm('service_7tmwh4g', 'template_w7qbq2z', form.current, 'b6TJmQrjbqUmxIZnF')
+      .then(
+        () => {
+          alert('Message successfully sent!')
+          // window.location.reload(false)
+        },
+        () => {
+          alert('Failed to send the message, please try again')
+        }
+      )
+  }
 
   const nameArray = ['A', 't', 'm', 'o', 's', 'p', 'h', 'e', 'r', 'i', 'c',
                      ' ', 'W', 'a', 's', 't', 'e'];
@@ -31,13 +69,9 @@ const Header = () => {
     <section>
       <div className="gpt3__header section__padding items-center mt-[25%] sm:mt-[25%] md:mt-[25%] lg:mt-auto xl:mt-auto 2xl:mt-auto" id="home">
         <div className="gpt3__header-content">
-          {/* <AnimatedLetters id="one" letterClass={letterClass} strArray={nameArray} idx={1} />
-          <br />
-          <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} /> */}
           <div id="nowrap">
             <AnimatedLetters id="one" letterClass={letterClass} strArray={nameArray} idx={1} />
             <br />
-            {/* <AnimatedLetters id="two" letterClass={letterClassTwo} strArray={nameArrayTwo} idx={1} /> */}
             <h1 id="two">Management</h1>
           </div>
           <p>
@@ -45,8 +79,11 @@ const Header = () => {
           </p>
 
           <div className="gpt3__header-content__input w-[90%] mx-auto sm:w-[90%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
-            <input type="email" placeholder="Your Email Address" />
-            <button type="button" className="min-w-fit gradient__bar">Get Started</button>
+            <form ref={form} className="flex basis-full" onSubmit={sendEmail}>
+              <input type="email" placeholder="Your Email Address" />
+              <button onClick={sendForm} type="button" className="min-w-fit gradient__bar">Get Started</button>
+              <input className="hidden" value="send" id="submitemail" type="submit"></input>
+            </form>
           </div>
 
           <div className="gpt3__header-content__people">

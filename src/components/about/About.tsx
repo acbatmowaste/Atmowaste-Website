@@ -6,7 +6,7 @@ import { GrChatOption } from 'react-icons/gr';
 
 export const About = () => {
   return (
-    <section id="about" className="about text-white">
+    <section id="aboutSectionLink" className="about text-white">
         {/* // bg-gradient-to-r from-sky-500 to-[#6936F5]  */}
       <motion.div id="whatAtmo" className="h-auto w-[88%] rounded-xl m-auto"
         initial={{ opacity: 0, y: 80, scale: 0.6 }}
@@ -28,10 +28,11 @@ export const About = () => {
             transition={{ delay: .7, duration: 0.7 }}>
               Restoring balance through atmospheric waste services
           </motion.h1>
+
           <motion.button id="button" className="rounded-lg p-2 mt-4 w-1/2 lg:w-1/5 self-center">
-             {/* initial={{ opacity: 0, x: 300 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             transition={{ delay: 0.7, duration: 0.7 }}> */}
+            {/* initial={{ opacity: 0, x: 300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.7, duration: 0.7 }}> */}
               Join our efforts
           </motion.button>
         </div>

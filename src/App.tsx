@@ -29,7 +29,7 @@ const App = () => {
             />
           </Canvas>
           <Header />
-          <Link to="#about" smooth>
+          <Link to="#aboutSectionLink" smooth>
             <About />
           </Link>
           <motion.div className="" style={{ height: '35vh' }}>
@@ -68,7 +68,7 @@ const App = () => {
             <div className="w-80 h-80 card2 relative rounded-xl border-2xl"></div> 
           </div> */}
           <Link to="#subscribe" smooth>
-            <Subscribe />
+            {/* <Subscribe /> */}
           </Link>
           <Footer />
         </div>
