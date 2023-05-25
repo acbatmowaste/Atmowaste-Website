@@ -32,13 +32,13 @@ const App = () => {
           <Link to="#aboutSectionLink" smooth>
             <About />
           </Link>
-          <motion.div className="" style={{ height: '35vh' }}>
+          {/* <motion.div className="" style={{ height: '35vh' }}>
             <Canvas>
               <ambientLight intensity={0.2} />
               <pointLight color="#f6f3ea" position={[2, 0, 5]} intensity={2.8} />
               <Values modelPath="./src/assets/co2.glb" />
             </Canvas>
-          </motion.div>
+          </motion.div> */}
           <Link to="#philosophy" smooth>
             <Philosophy />
           </Link>
