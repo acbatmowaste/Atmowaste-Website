@@ -1,14 +1,12 @@
 import { Fragment, useEffect, useState } from "react";
 import "./header.scss";
-import trees from "../../assets/Trees.png";
 import { BsArrowDownCircle } from "react-icons/bs";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
-import { Earth } from "../../components";
+// import { Canvas } from "@react-three/fiber";
+// import { Suspense } from "react";
+// import { Earth } from "../../components";
 import { motion } from "framer-motion";
-import Media from 'react-media';
-import emailjs from '@emailjs/browser'
+// import Media from 'react-media';
 import { useRef } from 'react'
 
 const Header = () => {
@@ -19,18 +17,29 @@ const Header = () => {
   const form = useRef<HTMLFormElement>(null!);
 
   const mouseClickEvents = ['mousedown', 'click', 'mouseup'];
-function simulateMouseClick(element: any){
-  mouseClickEvents.forEach(mouseEventType =>
-    element.dispatchEvent(
-      new MouseEvent(mouseEventType, {
-          view: window,
-          bubbles: true,
-          cancelable: true,
-          buttons: 1
-      })
-    )
-  );
-}
+  const [email, setEmail] = useState<string>('');
+  const [placeholder, setPlaceholder] = useState<string>('Your Email Address');
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (formSubmitted) {
+      form.current.reset();
+      setFormSubmitted(false);  // reset and set to false to instantiate default placeholder
+    }
+  }, [formSubmitted]);
+
+  function simulateMouseClick(element: any){
+    mouseClickEvents.forEach(mouseEventType =>
+      element.dispatchEvent(
+        new MouseEvent(mouseEventType, {
+            view: window,
+            bubbles: true,
+            cancelable: true,
+            buttons: 1
+        })
+      )
+    );
+  }
 
   const sendForm = (e: any) => {
     const element = document.getElementById("submitemail");
@@ -40,17 +49,39 @@ function simulateMouseClick(element: any){
   const sendEmail = (e: any) => {
     e.preventDefault()
   
-    emailjs
-      .sendForm('service_7tmwh4g', 'template_w7qbq2z', form.current, 'b6TJmQrjbqUmxIZnF')
-      .then(
-        () => {
-          alert('Message successfully sent!')
-          // window.location.reload(false)
-        },
-        () => {
-          alert('Failed to send the message, please try again')
-        }
-      )
+    // Regex to validate, removed default HTML validation
+    const expression = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    const isValidEmail = expression.test(email);
+
+    if (!isValidEmail) {
+      setPlaceholder('Please enter a valid email address');
+      setEmail('');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('email', email);
+
+    setEmail('');
+    setPlaceholder('Submitting...');
+    // triggers while waiting for response from apps script, then replaced with success message. Otherwise, 3 second delay.
+
+
+    // send POST request to Apps Script that matches google sheets headers to form data fields.
+    // useful so that this script can be adapted to other forms like one at bottom of webpage
+    fetch('https://script.google.com/macros/s/AKfycbz1SeQGdaAJNZtRh5D1edZwsIIXbhzrZWTKxD0o1ngkOBVgxAWCPOiZ35emAzxbT_rbAw/exec', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      console.log('Success!', response);
+      setPlaceholder('Success. Thank you for subscribing!');
+      setFormSubmitted(true);
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      setPlaceholder('Oops! Something went wrong.');  // This currently never triggers. Maybe delete it and keep log?
+    });
   }
 
   const nameArray = ['A', 't', 'm', 'o', 's', 'p', 'h', 'e', 'r', 'i', 'c',
@@ -65,6 +96,7 @@ function simulateMouseClick(element: any){
     }, 1300)
   }, [])  
 
+  // Removed earth animation for now unless we can figure out how to make it use lower memory and CPU usage
   return (
     <section>
       <div className="gpt3__header section__padding items-center mt-[25%] sm:mt-[25%] md:mt-[25%] lg:mt-auto xl:mt-auto 2xl:mt-auto" id="home">
@@ -79,8 +111,14 @@ function simulateMouseClick(element: any){
           </p>
 
           <div className="gpt3__header-content__input w-[90%] mx-auto sm:w-[90%] md:w-[100%] lg:w-[100%] xl:w-[100%] 2xl:w-[100%]">
-            <form ref={form} className="flex basis-full" onSubmit={sendEmail}>
-              <input type="email" placeholder="Your Email Address" />
+            <form ref={form} className="flex basis-full" onSubmit={sendEmail} noValidate>
+              <input type="email" value={email} placeholder={placeholder}
+                     onChange={(e) => {
+                       setEmail(e.target.value);
+                       if (e.target.value) {
+                         setPlaceholder('Your Email Address');
+                       }
+                     }} />
               <button onClick={sendForm} type="button" className="min-w-fit gradient__bar">Get Started</button>
               <input className="hidden" value="send" id="submitemail" type="submit"></input>
             </form>
@@ -93,54 +131,54 @@ function simulateMouseClick(element: any){
             </a>
           </div>
         </div> 
-        { contentLoaded && (
-          <Media queries={{
-            small: "(max-width: 599px)",
-            medium: "(min-width: 600px) and (max-width: 1199px)",
-            large: "(min-width: 1200px)"
-          }}>
-            {matches => (
-              <Fragment>
-                {matches.small && 
-                  <motion.div
-                    id="canvas"
-                    initial={{ opacity: 0, y: -300 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 3, duration: 1.5 }}>
-                    <Canvas id="earthRender" style={{ width: '400px', height: '400px'}} className="">
-                      <Suspense fallback={null}>
-                        <Earth />
-                      </Suspense>
-                    </Canvas>
-                  </motion.div>}
-                {matches.medium && 
-                  <motion.div
-                    id="canvas"
-                    className="grow mt-12"
-                    initial={{ opacity: 0, y: -300 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 3, duration: 1.5 }}>
-                    <Canvas id="earthRender" style={{ width: '500px', height: '500px'}} className="">
-                      <Suspense fallback={null}>
-                        <Earth />
-                      </Suspense>
-                    </Canvas>
-                  </motion.div>}
-                {matches.large && 
-                  <motion.div
-                    id="canvas"
-                    initial={{ opacity: 0, y: -300 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 3, duration: 1.5 }}>
-                    <Canvas id="earthRender" style={{ width: '600px', height: '600px'}} className="">
-                      <Suspense fallback={null}>
-                        <Earth />
-                      </Suspense>
-                    </Canvas>
-                  </motion.div>}
-              </Fragment>
-            )}
-          </Media>)}
+        {/*{ contentLoaded && (*/}
+        {/*  <Media queries={{*/}
+        {/*    small: "(max-width: 599px)",*/}
+        {/*    medium: "(min-width: 600px) and (max-width: 1199px)",*/}
+        {/*    large: "(min-width: 1200px)"*/}
+        {/*  }}>*/}
+        {/*    {matches => (*/}
+        {/*      <Fragment>*/}
+        {/*        {matches.small && */}
+        {/*          <motion.div*/}
+        {/*            id="canvas"*/}
+        {/*            initial={{ opacity: 0, y: -300 }}*/}
+        {/*            animate={{ opacity: 1, y: 0 }}*/}
+        {/*            transition={{ delay: 3, duration: 1.5 }}>*/}
+        {/*            <Canvas id="earthRender" style={{ width: '400px', height: '400px'}} className="">*/}
+        {/*              <Suspense fallback={null}>*/}
+        {/*                <Earth />*/}
+        {/*              </Suspense>*/}
+        {/*            </Canvas>*/}
+        {/*          </motion.div>}*/}
+        {/*        {matches.medium && */}
+        {/*          <motion.div*/}
+        {/*            id="canvas"*/}
+        {/*            className="grow mt-12"*/}
+        {/*            initial={{ opacity: 0, y: -300 }}*/}
+        {/*            animate={{ opacity: 1, y: 0 }}*/}
+        {/*            transition={{ delay: 3, duration: 1.5 }}>*/}
+        {/*            <Canvas id="earthRender" style={{ width: '500px', height: '500px'}} className="">*/}
+        {/*              <Suspense fallback={null}>*/}
+        {/*                <Earth />*/}
+        {/*              </Suspense>*/}
+        {/*            </Canvas>*/}
+        {/*          </motion.div>}*/}
+        {/*        {matches.large && */}
+        {/*          <motion.div*/}
+        {/*            id="canvas"*/}
+        {/*            initial={{ opacity: 0, y: -300 }}*/}
+        {/*            animate={{ opacity: 1, y: 0 }}*/}
+        {/*            transition={{ delay: 3, duration: 1.5 }}>*/}
+        {/*            <Canvas id="earthRender" style={{ width: '600px', height: '600px'}} className="">*/}
+        {/*              <Suspense fallback={null}>*/}
+        {/*                <Earth />*/}
+        {/*              </Suspense>*/}
+        {/*            </Canvas>*/}
+        {/*          </motion.div>}*/}
+        {/*      </Fragment>*/}
+        {/*    )}*/}
+        {/*  </Media>)}*/}
         {/* <motion.div
           id="canvas"
           initial={{ opacity: 0, y: -300 }}
