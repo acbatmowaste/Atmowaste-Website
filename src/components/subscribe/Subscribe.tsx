@@ -12,7 +12,7 @@ export const Subscribe = () => {
 
   const sendEmail = (e: any) => {
     e.preventDefault()
-  
+
     emailjs
       .sendForm('service_7tmwh4g', 'template_w7qbq2z', form.current, 'b6TJmQrjbqUmxIZnF')
       .then(

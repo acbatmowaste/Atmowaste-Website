@@ -29,9 +29,7 @@ const App = () => {
             />
           </Canvas>
           <Header />
-          <Link to="#aboutSectionLink" smooth>
-            <About />
-          </Link>
+          <About id="aboutSectionLink" />
           {/* <motion.div className="" style={{ height: '35vh' }}>
             <Canvas>
               <ambientLight intensity={0.2} />
@@ -39,9 +37,7 @@ const App = () => {
               <Values modelPath="./src/assets/co2.glb" />
             </Canvas>
           </motion.div> */}
-          <Link to="#philosophy" smooth>
-            <Philosophy />
-          </Link>
+          <Philosophy id="philosophy" />
           <Contact />
           {/* <div className="mt-32 mb-96" style={{ height: '100vh' }}>
             <motion.h1 id="values" className="text-5xl gradient__text text-white text-center">Our Values</motion.h1>
@@ -67,9 +63,8 @@ const App = () => {
 
             <div className="w-80 h-80 card2 relative rounded-xl border-2xl"></div> 
           </div> */}
-          <Link to="#subscribe" smooth>
+          {/*<Subscribe id="subscribe" />*/}
             {/* <Subscribe /> */}
-          </Link>
           <Footer />
         </div>
       </div>
